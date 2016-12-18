@@ -7,7 +7,7 @@ setUploadFiles $@
 launchDirectory=$(pwd)
 scriptDirectory=`dirname "${BASH_SOURCE-$0}"`
 
-: ${TOPNOTCH_JAR:="$scriptDirectory"/topnotch-assembly-0.1.jar}
+: ${TOPNOTCH_JAR:="$scriptDirectory"/topnotch_2.10-0.1.jar}
 : ${MASTER:=local[4]}
 : ${MAIN:=com.bfm.topnotch.tnengine.TnEngine}
 
@@ -28,12 +28,12 @@ done
 
 if [ $# -eq 0 ]
 then
-  exec $SPARK_HOME/bin/spark-submit \
+  exec spark-submit \
     --master $MASTER \
     --class $MAIN \
     $TOPNOTCH_JAR
 else
-  exec $SPARK_HOME/bin/spark-submit \
+  exec spark-submit \
     --master $MASTER \
     --class $MAIN \
     --driver-java-options -XX:MaxPermSize=512m \

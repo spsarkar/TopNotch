@@ -2,8 +2,6 @@
 /project/project
 /project/target
 /.idea
-/bin/*.jar
-/bin/jq-linux64
 derby.log
 metastore_db/
 topnotch/
